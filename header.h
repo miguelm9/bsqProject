@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 14:21:37 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/24 19:19:09 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/24 20:23:34 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@
 
 int	are_lines_ok(char *map);
 int	is_everything_good(char *file_path);
-int	map_creator(char *map);
-int	ft_atoi(char *str);
 int	get_lines(char *map);
 int	get_char(char *map);
+char	*map_creator(char *map,
+char array_mapa[get_lines(map)][get_char(map)]);
+int	ft_atoi(char *str);
 char	*open_file(char *file_path);
 
 #endif
