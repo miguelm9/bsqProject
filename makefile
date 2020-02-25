@@ -1,4 +1,4 @@
-SRCS	= main.c check_file_validity.c check_lines.c map_creator.c get_lines_and_chars.c
+SRCS	= main.c check_file_validity.c check_lines.c map_creator.c get_lines_and_chars.c are_chars_same.c get_max_values.c set_aux_matrix.c
 
 OBJS	= ${SRCS:.c=.o}
 

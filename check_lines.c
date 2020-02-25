@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:28:34 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/24 19:18:56 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/25 18:42:22 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,6 @@ int	are_lines_ok(char *map)
 	num_lines = (char*)malloc(2700000);
 	if (is_first_line_ok(map, num_lines) && are_number_lines_ok(map, num_lines)
 	&& are_chars_ok(map))
-	{
-		//map_creator(map, array_mapa);
 		return (1);
-	}
 	return  (0);
 }

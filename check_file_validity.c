@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 14:21:27 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/24 19:18:54 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/25 18:42:12 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ int		is_everything_good(char *file_path)
 	char *map;
 
 	map = open_file(file_path);
-	if (are_lines_ok(map))
+	if (are_lines_ok(map) && are_chars_same(map))
+	{
+		free(map);
 		return (1);
-	free(map);
+	}
 	return (0);
 }
