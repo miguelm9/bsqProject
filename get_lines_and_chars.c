@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:26:04 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/24 19:18:52 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 20:33:47 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,12 @@ int	get_lines(char *map)
 	c = 0;
 	i = 0;
 	have_numbers = 0;
-	while (map[i] != '\n')
+	while (map[c] != '\n')
+		c++;
+	i = 0;
+	while (i < c - 3)
 	{
-		if (map[0] >= 48 && map[0] <= 57)
-		{
-			while (map[c] >= 48 && map[c] <= 57)
-			{
-				num_lines[c] = map[c];
-				have_numbers++;
-				c++;
-			}
-		}
+		num_lines[i] = map[i];
 		i++;
 	}
 	i = ft_atoi(num_lines);

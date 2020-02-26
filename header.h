@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 14:21:37 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/26 19:47:37 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 20:53:18 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	find_submatrix(char *map, char array[get_lines(map)][get_char(map)]);
 int		min(int a, int b, int c);
 void	fill_array_positions(char *map, int max_i, int max_j, int size);
 void	read_from_console(void);
+int		is_first_line_ok2(char *map, int *not_num);
 
 #endif

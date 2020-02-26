@@ -6,11 +6,24 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 17:25:51 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/26 19:50:34 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 20:51:07 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+int		is_first_line_ok2(char *map, int *not_num)
+{
+	int c;
+
+	c = 0;
+	while (map[c] != '\n')
+	{
+		if (map[c++] < 48 || map[c] > 57)
+			not_num++;
+	}
+	return (c);
+}
 
 void	print_it(char *map, char array[get_lines(map)][get_char(map)])
 {

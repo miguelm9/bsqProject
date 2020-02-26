@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 18:06:03 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/26 19:32:31 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 20:03:19 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,59 +14,32 @@
 
 char	get_empty(char *map)
 {
-	char	empty;
 	int		i;
 
 	i = 0;
-	empty = ' ';
 	while (map[i] != '\n')
-	{
-		if (map[i] < 48 || map[i] > 57)
-		{
-			empty = map[i];
-			break ;
-		}
 		i++;
-	}
-	return (empty);
+	return (map[i - 3]);
 }
 
 char	get_full(char *map)
 {
-	char	full;
 	int		i;
 
 	i = 0;
-	full = ' ';
 	while (map[i] != '\n')
-	{
-		if (map[i] < 48 || map[i] > 57)
-		{
-			full = map[i + 2];
-			break ;
-		}
 		i++;
-	}
-	return (full);
+	return (map[i - 1]);
 }
 
 char	get_obstacle(char *map)
 {
-	char	obstacle;
 	int		i;
 
 	i = 0;
-	obstacle = ' ';
 	while (map[i] != '\n')
-	{
-		if (map[i] < 48 || map[i] > 57)
-		{
-			obstacle = map[i + 1];
-			break ;
-		}
 		i++;
-	}
-	return (obstacle);
+	return (map[i - 2]);
 }
 
 int		are_chars_same(char *map)

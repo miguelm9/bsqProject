@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:28:34 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/26 19:49:22 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 20:53:00 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,25 +44,27 @@ int		is_first_line_ok(char *map, char *num_lines)
 {
 	int c;
 	int i;
-	int have_numbers;
+	int *not_num;
 
-	c = 0;
+	not_num = malloc(sizeof(int));
+	*not_num = 0;
+	c = is_first_line_ok2(map, not_num);
 	i = 0;
-	have_numbers = 0;
 	while (map[i] != '\n')
 	{
 		if (map[0] >= 48 && map[0] <= 57)
 		{
-			while (map[c] >= 48 && map[c] <= 57)
+			while (i < c - 3)
 			{
-				num_lines[c] = map[c];
-				have_numbers++;
-				c++;
+				num_lines[i] = map[i];
+				i++;
 			}
 		}
+		else
+			return (0);
 		i++;
 	}
-	return (i - have_numbers == 3) ? 1 : 0;
+	return (*not_num <= 3) ? 1 : 0;
 }
 
 int		are_number_lines_ok(char *map, char *num_lines)
