@@ -6,13 +6,28 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 14:19:18 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/26 19:29:18 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 19:47:56 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	main(int argc, char *argv[])
+void	do_everyhing(char *file_path)
+{
+	char	array_mapa[get_lines(open_file(file_path))]
+
+	[get_char(open_file(file_path))];
+	if (is_everything_good(file_path))
+	{
+		map_creator(open_file(file_path), array_mapa);
+		find_submatrix(open_file(file_path), array_mapa);
+		write(1, "\n", 1);
+	}
+	else
+		write(1, "map error\n", 11);
+}
+
+int		main(int argc, char *argv[])
 {
 	int i;
 
@@ -20,31 +35,14 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 	{
 		read_from_console();
-		char	array_mapa[get_lines(open_file("console.txt"))]
-		[get_char(open_file("console.txt"))];
-		if (is_everything_good("console.txt"))
-		{
-			map_creator(open_file("console.txt"), array_mapa);
-			find_submatrix(open_file("console.txt"), array_mapa);
-			write(1, "\n", 1);
-		}
-		else
-			write(1, "map error\n", 11);
+		write(1, "\n", 1);
+		do_everyhing("console.txt");
 	}
 	else
 	{
 		while (i < argc)
 		{
-			char	array_mapa[get_lines(open_file(argv[i]))]
-			[get_char(open_file(argv[i]))];
-			if (is_everything_good(argv[i]))
-			{
-				map_creator(open_file(argv[i]), array_mapa);
-				find_submatrix(open_file(argv[i]), array_mapa);
-				write(1, "\n", 1);
-			}
-			else
-				write(1, "map error\n", 11);
+			do_everyhing(argv[i]);
 			i++;
 		}
 	}

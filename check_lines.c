@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:28:34 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/25 18:42:22 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 19:49:22 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_atoi(char *str)
 	return (x * esnegativo);
 }
 
-int is_first_line_ok(char *map, char *num_lines)  //Checkea que la primera linea tenga los numeros y tres caracateres más
+int		is_first_line_ok(char *map, char *num_lines)
 {
 	int c;
 	int i;
@@ -65,7 +65,7 @@ int is_first_line_ok(char *map, char *num_lines)  //Checkea que la primera linea
 	return (i - have_numbers == 3) ? 1 : 0;
 }
 
-int	are_number_lines_ok(char *map, char *num_lines)
+int		are_number_lines_ok(char *map, char *num_lines)
 {
 	int i;
 	int lines;
@@ -81,10 +81,11 @@ int	are_number_lines_ok(char *map, char *num_lines)
 	return (lines == ft_atoi(num_lines)) ? 1 : 0;
 }
 
-int	are_chars_ok(char *map)
+int		are_chars_ok(char *map)
 {
-	int chars;
-	int i;
+	int		chars;
+	int		i;
+
 	i = 0;
 	while (map[i] != '\n')
 		i++;
@@ -105,7 +106,7 @@ int	are_chars_ok(char *map)
 	return (1);
 }
 
-int	are_lines_ok(char *map)
+int		are_lines_ok(char *map)
 {
 	char *num_lines;
 
@@ -113,5 +114,5 @@ int	are_lines_ok(char *map)
 	if (is_first_line_ok(map, num_lines) && are_number_lines_ok(map, num_lines)
 	&& are_chars_ok(map))
 		return (1);
-	return  (0);
+	return (0);
 }

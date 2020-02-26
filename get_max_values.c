@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 19:05:25 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/26 17:59:22 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 19:50:09 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char array[get_lines(map)][get_char(map)])
 	}
 }
 
-int	min(int a, int b, int c)
+int		min(int a, int b, int c)
 {
 	int m;
 
@@ -46,7 +46,7 @@ int	min(int a, int b, int c)
 	return (m);
 }
 
-int	get_coordinates(char *map, int aux[get_lines(map)]
+int		get_coordinates(char *map, int aux[get_lines(map)]
 [get_char(map)], int max_i, int max_j)
 {
 	int max_of_s;

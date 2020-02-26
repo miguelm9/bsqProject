@@ -6,33 +6,11 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 17:25:51 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/26 17:51:46 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 19:50:34 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-// void	reset_matrix(char *map,
-// char array[get_lines(map)][get_char(map)])
-// {
-// 	int i;
-// 	int j;
-
-// 	i = 0;
-// 	while (i < get_lines(map))
-// 	{
-// 		j = 0;
-// 		while (j < get_char(map))
-// 		{
-// 			if (array[i][j] == '1')
-// 				array[i][j] = get_empty(map);
-// 			else
-// 				array[i][j] = get_obstacle(map);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
 
 void	print_it(char *map, char array[get_lines(map)][get_char(map)])
 {
@@ -55,9 +33,9 @@ void	print_it(char *map, char array[get_lines(map)][get_char(map)])
 
 void	fill_array_positions(char *map, int max_i, int max_j, int size)
 {
-	char array[get_lines(map)][get_char(map)];
-	int min_i;
-	int min_j;
+	char	array[get_lines(map)][get_char(map)];
+	int		min_i;
+	int		min_j;
 
 	map_creator(map, array);
 	min_i = max_i - size + 1;
