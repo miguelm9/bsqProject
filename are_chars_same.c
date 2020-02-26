@@ -6,7 +6,7 @@
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 18:06:03 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/25 18:37:53 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/02/26 17:59:08 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,25 @@ char	get_empty(char *map)
 		i++;
 	}
 	return (empty);
+}
+
+char	get_full(char *map)
+{
+	char	full;
+	int		i;
+
+	i = 0;
+	full = ' ';
+	while (map[i] != '\n')
+	{
+		if (map[i] < 48 || map[i] > 57)
+		{
+			full = map[i + 2];
+			break ;
+		}
+		i++;
+	}
+	return (full);
 }
 
 char	get_obstacle(char *map)

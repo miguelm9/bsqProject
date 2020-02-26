@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   user_read.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 14:19:18 by mmartin           #+#    #+#             */
-/*   Updated: 2020/02/26 18:35:27 by mmartin          ###   ########.fr       */
+/*   Created: 2020/02/26 18:11:08 by mmartin           #+#    #+#             */
+/*   Updated: 2020/02/26 18:34:42 by mmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	main(int argc, char *argv[])
+void read_from_console(void)
 {
-	int i;
 	char	buf;
 	int		fd;
 
-	i = 1;
-	if (argc == 1)
-	{
-		read_from_console();
-	}
-	while (i < argc)
-	{
-		char	array_mapa[get_lines(open_file(argv[i]))]
-		[get_char(open_file(argv[i]))];
-		if (is_everything_good(argv[i]))
-		{
-			map_creator(open_file(argv[i]), array_mapa);
-			find_submatrix(open_file(argv[i]), array_mapa);
-			write(1, "\n", 1);
-		}
-		else
-			write(1, "map error\n", 11);
-		i++;
-	}
-	return (0);
+	fd = open("console.txt", O_RDWR | O_CREAT);
+	while (read(0, &buf, 1))
+		write(fd, &buf, 1);
+	close(fd);
 }
